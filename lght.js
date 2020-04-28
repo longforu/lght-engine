@@ -1664,7 +1664,7 @@ lght.shape.prototype.enterCursorEvent = function () {
 lght.app.prototype.attachEvent = function (event, func) {
   var _this26 = this;
 
-  var mobile = window.mobileCheck();
+  var mobile = (0, _util.mobileCheck)();
   var trueEvent = event;
 
   if (mobile) {
@@ -1689,7 +1689,7 @@ lght.app.prototype.attachEvent = function (event, func) {
   this.addEventListener(trueEvent, function (e) {
     if (_this26.killed) return;
 
-    if (window.mobileCheck()) {
+    if ((0, _util.mobileCheck)()) {
       Array.from(e.changedTouches).forEach(function (touch) {
         var _this26$translateMous = _this26.translateMouseCoor(touch),
             _this26$translateMous2 = _slicedToArray(_this26$translateMous, 2),

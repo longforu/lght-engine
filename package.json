@@ -1,6 +1,6 @@
 {
   "name": "lght-engine",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lght engine is an easy to use 2d engine for web canvas.",
   "main": "lght.js",
   "scripts": {

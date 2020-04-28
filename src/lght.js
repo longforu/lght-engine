@@ -3,7 +3,7 @@
 //LIGHT LIBRARY IS DEVELOPED BY LONG TRAN
 //COPYRIGHT 2020, ALL RIGHTS RESERVED
 
-import {getByDotNotation, changeByDotNotation , mergeDefaultPropertyObject, findDistance2Point, findIntersection, rotatePoint, degToRad, findAngle2Point ,findClosestPoint, calculateRotatePoint, radToDeg} from './util/util'
+import {getByDotNotation, changeByDotNotation , mergeDefaultPropertyObject, findDistance2Point, findIntersection, rotatePoint, degToRad, findAngle2Point ,findClosestPoint, calculateRotatePoint, radToDeg, mobileCheck} from './util/util'
 
 let lght = {};
 
@@ -1081,7 +1081,7 @@ lght.shape.prototype.enterCursorEvent = function(){
 }
 
 lght.app.prototype.attachEvent = function(event,func){
-    const mobile = window.mobileCheck()
+    const mobile = mobileCheck()
     let trueEvent = event
     if(mobile){
         switch(trueEvent){
@@ -1100,7 +1100,7 @@ lght.app.prototype.attachEvent = function(event,func){
     }
     this.addEventListener(trueEvent,(e)=>{
         if(this.killed) return 
-        if(window.mobileCheck()){
+        if(mobileCheck()){
             Array.from(e.changedTouches).forEach(touch=>{
                 const [x,y] = this.translateMouseCoor(touch)
                 func(x,y)
